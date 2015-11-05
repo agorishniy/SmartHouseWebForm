@@ -14,7 +14,7 @@ namespace SmartHouse
 
         List<IDevice> listDevices;
 
-
+    
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -35,14 +35,13 @@ namespace SmartHouse
                 listDevices.Add(new Louvers("Room 2", false, 1));
 
                 Session["listDevices"] = listDevices;
-                DisplayDevices();
             }
             else
             {
                 listDevices = (List<IDevice>)Session["listDevices"];
-                DisplayDevices();
             }
 
+            DisplayDevices();
         }
 
         protected void DisplayDevices()
@@ -105,7 +104,7 @@ namespace SmartHouse
             divHeader.CssClass = "device-status-header";
 
             imgIcon.Attributes["name"] = "imgIcon" + sNum;
-            imgIcon.ImageUrl = "App_Themes/images/" + dev.Type + "_3.png";
+            imgIcon.ImageUrl = "Content/images/" + dev.GetType().Name + "_3.png";
             imgIcon.CssClass = "device-status-icon";
 
             devName.Attributes["name"] = "devName" + sNum;
@@ -117,7 +116,7 @@ namespace SmartHouse
             btnDelete.CssClass = "device-status-btn-del";
 
             imgDelete.Attributes["name"] = "imgDelete" + sNum;
-            imgDelete.ImageUrl = "App_Themes/images/del_green_2.png";
+            imgDelete.ImageUrl = "Content/images/del_green_2.png";
             imgDelete.CssClass = "device-status-img-del";
 
             btnDelete.Controls.Add(imgDelete);
@@ -161,9 +160,9 @@ namespace SmartHouse
 
             imgBtn.Attributes["name"] = "imgBtn" + sNum;
             if (listDevices[iNum - 1].State) 
-                imgBtn.ImageUrl = "App_Themes/images/btn_on.png";
+                imgBtn.ImageUrl = "Content/images/btn_on.png";
             else
-                imgBtn.ImageUrl = "App_Themes/images/btn_off.png";
+                imgBtn.ImageUrl = "Content/images/btn_off.png";
 
             imgBtn.CssClass = "device-div-on-off-cmd-img";
 
@@ -215,12 +214,12 @@ namespace SmartHouse
             cmdBtnDown.Click += new EventHandler(this.BtnDown_Click);
 
             imgBtnDown.Attributes["name"] = "imgBtnDown" + sNum;
-            imgBtnDown.ImageUrl = "App_Themes/images/btn_down.png";
+            imgBtnDown.ImageUrl = "Content/images/btn_down.png";
             imgBtnDown.CssClass = "device-div-speed-img";
 
             imgState.Attributes["name"] = "imgState" + sNum;
             
-            imgState.ImageUrl = "App_Themes/images/val_" + iState.ToString() + ".png";
+            imgState.ImageUrl = "Content/images/val_" + iState.ToString() + ".png";
             imgState.CssClass = "device-div-speed-state";
 
 
@@ -228,7 +227,7 @@ namespace SmartHouse
             cmdBtnUp.Click += new EventHandler(this.BtnUp_Click);
 
             imgBtnUp.Attributes["name"] = "imgBtnUp" + sNum;
-            imgBtnUp.ImageUrl = "App_Themes/images/btn_up.png";
+            imgBtnUp.ImageUrl = "Content/images/btn_up.png";
             imgBtnUp.CssClass = "device-div-speed-img";
 
 
@@ -288,7 +287,7 @@ namespace SmartHouse
             cmdBtnDown.Click += new EventHandler(this.BtnDown_Click);
 
             imgBtnDown.Attributes["name"] = "imgBtnDown" + sNum;
-            imgBtnDown.ImageUrl = "App_Themes/images/btn_down.png";
+            imgBtnDown.ImageUrl = "Content/images/btn_down.png";
             imgBtnDown.CssClass = "device-div-speed-img";
 
 
@@ -296,7 +295,7 @@ namespace SmartHouse
             cmdBtnUp.Click += new EventHandler(this.BtnUp_Click);
 
             imgBtnUp.Attributes["name"] = "imgBtnUp" + sNum;
-            imgBtnUp.ImageUrl = "App_Themes/images/btn_up.png";
+            imgBtnUp.ImageUrl = "Content/images/btn_up.png";
             imgBtnUp.CssClass = "device-div-speed-img";
 
 
@@ -355,12 +354,12 @@ namespace SmartHouse
             //            cmdBtnDown.CssClass = "device-div-on-off-cmd-btn";
 
             imgBtnDown.Attributes["name"] = "imgBtnDown" + sNum;
-            imgBtnDown.ImageUrl = "App_Themes/images/btn_down.png";
+            imgBtnDown.ImageUrl = "Content/images/btn_down.png";
             imgBtnDown.CssClass = "device-div-speed-img";
 
             imgState.Attributes["name"] = "imgState" + sNum;
 
-            imgState.ImageUrl = "App_Themes/images/icon_" + ((Tv)listDevices[iNum - 1]).Channel.ToString() + ".png";
+            imgState.ImageUrl = "Content/images/icon_" + ((Tv)listDevices[iNum - 1]).Channel.ToString() + ".png";
             imgState.CssClass = "device-div-prog-state";
 
 
@@ -368,7 +367,7 @@ namespace SmartHouse
             cmdBtnUp.Click += new EventHandler(this.BtnUp_Click);
 
             imgBtnUp.Attributes["name"] = "imgBtnUp" + sNum;
-            imgBtnUp.ImageUrl = "App_Themes/images/btn_up.png";
+            imgBtnUp.ImageUrl = "Content/images/btn_up.png";
             imgBtnUp.CssClass = "device-div-speed-img";
 
 
@@ -416,27 +415,27 @@ namespace SmartHouse
             imgState.Attributes["name"] = "imgState" + sNum;
             imgState.CssClass = "device-image";
 
-            switch (listDevices[iNum - 1].Type)
+            switch (listDevices[iNum - 1].GetType().Name)
             {
-                case "lamp":
+                case "Lamp":
                     if (listDevices[iNum - 1].State)
                         sImgFile = "lamp_on.png";
                     else
                         sImgFile = "lamp_off.png";
                     break;
-                case "fan":
+                case "Fan":
                     if (listDevices[iNum - 1].State)
                         sImgFile = "fan_" + ((Fan)listDevices[iNum - 1]).Speed.Value.ToString() + ".gif";
                     else
                         sImgFile = "fan_stop.png";
                     break;
-                case "louvers":
+                case "Louvers":
                     if (listDevices[iNum - 1].State)
                         sImgFile = "louvers_" + ((Louvers)listDevices[iNum - 1]).Open.Value.ToString() + ".png";
                     else
                         sImgFile = "louvers_stop.png";
                     break;
-                case "tv":
+                case "Tv":
                     if (listDevices[iNum - 1].State)
                         sImgFile = "tv_" + ((Tv)listDevices[iNum - 1]).Channel.ToString() + ".png";
                     else
@@ -444,7 +443,7 @@ namespace SmartHouse
                     break;
             }
 
-            imgState.ImageUrl = "App_Themes/images/" + sImgFile;
+            imgState.ImageUrl = "Content/images/" + sImgFile;
 
             divBase.Controls.Add(cmdName);
             divBase.Controls.Add(imgState);
@@ -456,13 +455,13 @@ namespace SmartHouse
         {
             switch (sType)
             {
-                case "lamp":
+                case "Lamp":
                     return new Lamp(NameOfNewDevice.Text, false);
-                case "fan":
+                case "Fan":
                     return new Fan(NameOfNewDevice.Text, false, 1);
-                case "louvers":
+                case "Louvers":
                     return new Louvers(NameOfNewDevice.Text, false, 1);
-                case "tv":
+                case "Tv":
                     return new Tv(NameOfNewDevice.Text, false, Channels.football, 2, 5);
             }
 
@@ -472,10 +471,10 @@ namespace SmartHouse
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
             string sID = ((LinkButton)sender).ID;
-            string sType = (sID.Substring(6, sID.Length - 6)).ToLower();
+            string sType = (sID.Substring(6, sID.Length - 6));
 
             if (NameOfNewDevice.Text != "")
-                if (!listDevices.Exists(i => ((i.Name == NameOfNewDevice.Text) && (i.Type == sType))))
+                if (!listDevices.Exists(i => ((i.Name == NameOfNewDevice.Text) && (i.GetType().Name == sType))))
                 {
                     listDevices.Add(GetNewDevice(sType));
                     Session["listDevices"] = listDevices;
@@ -499,15 +498,15 @@ namespace SmartHouse
             string sType = sName.Substring(0, sName.Length - 2);
             int numOfElement = Convert.ToInt32(sName.Substring(sName.Length - 2, 2)) - 1;
 
-            switch (listDevices[numOfElement].Type)
+            switch (listDevices[numOfElement].GetType().Name)
             {
-                case "fan":
+                case "Fan":
                     ((Fan)listDevices[numOfElement]).Speed.Down();
                     break;
-                case "louvers":
+                case "Louvers":
                     ((Louvers)listDevices[numOfElement]).Open.Down();
                     break;
-                case "tv":
+                case "Tv":
                     if (sType == "Program")
                         ((Tv)listDevices[numOfElement]).PreviousChannel();
                     if (sType == "Volume")
@@ -527,15 +526,15 @@ namespace SmartHouse
             string sType = sName.Substring(0, sName.Length - 2);
             int numOfElement = Convert.ToInt32(sName.Substring(sName.Length - 2, 2)) - 1;
 
-            switch (listDevices[numOfElement].Type)
+            switch (listDevices[numOfElement].GetType().Name)
             {
-                case "fan":
+                case "Fan":
                     ((Fan)listDevices[numOfElement]).Speed.Up();
                     break;
-                case "louvers":
+                case "Louvers":
                     ((Louvers)listDevices[numOfElement]).Open.Up();
                     break;
-                case "tv":
+                case "Tv":
                     if (sType == "Program")
                         ((Tv)listDevices[numOfElement]).NextChannel();
                     if (sType == "Volume")

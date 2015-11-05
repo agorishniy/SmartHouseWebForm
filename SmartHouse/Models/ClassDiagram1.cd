@@ -1,43 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SmartHouse.Models.Lamp">
-    <Position X="5" Y="4.25" Width="1.5" />
+    <Position X="5.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Lamp.cs</FileName>
       <NewMemberFileName>Models\SmartModels.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHouse.Models.Fan">
-    <Position X="3" Y="4.25" Width="1.5" />
+    <Position X="2" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="SmartHouse.Models.Device" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.084" />
+        <Point X="8" Y="3.667" />
+        <Point X="3.125" Y="3.667" />
+        <Point X="3.125" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Param" Type="SmartHouse.Models.Param" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="6.386" />
+        <Point X="2.75" Y="7.312" />
+        <Point X="5.5" Y="7.312" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Fan.cs</FileName>
       <NewMemberFileName>Models\SmartModels.cs</NewMemberFileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Param" />
+    </ShowAsAssociation>
     <Lollipop Position="0.194" />
   </Class>
   <Class Name="SmartHouse.Models.Device">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAQAAAAEAAAEAQAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAQAAAAEAAAEAAAABAAAAAA=</HashCode>
       <FileName>Models\Device.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="SmartHouse.Models.IDevice">
-    <Position X="1.25" Y="0.5" Width="1.5" />
+  <Class Name="SmartHouse.Models.Louvers">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="SmartHouse.Models.Device" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.084" />
+        <Point X="8" Y="3.667" />
+        <Point X="8.5" Y="3.667" />
+        <Point X="8.5" Y="4.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAQAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Louvers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouse.Models.Param">
+    <Position X="5.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAAAQAAAAAAAAAAAAAAAAACAAAAAgAAAAAAI=</HashCode>
+      <FileName>Models\Param.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHouse.Models.Tv">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="SmartHouse.Models.Device" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.084" />
+        <Point X="8" Y="3.664" />
+        <Point X="12" Y="3.664" />
+        <Point X="12" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgAAAoIAAAIAAAAAAAAAAAAAAAAAIAAAACAAA=</HashCode>
+      <FileName>Models\Tv.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="SmartHouse.Models.IDevice">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Models\IDevice.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHouse.Models.IDevSpeed">
-    <Position X="1.25" Y="4.25" Width="1.5" />
+    <Position X="3.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IDevSpeed.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouse.Models.IDevOpen">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\IDevOpen.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="SmartHouse.Models.IDevVolume">
+    <Position X="12.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\IDevVolume.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouse.Models.IDevBright">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IDevBright.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SmartHouse.Models.Channels">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAQAQAACQAACAAAA=</HashCode>
+      <FileName>Models\Channels.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

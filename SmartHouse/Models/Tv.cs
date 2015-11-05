@@ -1,24 +1,18 @@
 ﻿namespace SmartHouse.Models
 {
-    public class Tv: Device, IDevBright, IDevVolume 
+    public class Tv : Device, IDevBright, IDevVolume 
     {
-        override public string Type
-        {
-            get
-            {
-                return "tv";
-            }
-        }
-
-        public Tv(string Name, bool State, Channels Channel, byte Volume, byte Bright)
-            : base(Name, State)
-        {
-            channel = Channel;
-            volume = new Param(Volume, 1, 5);
-            bright = new Param(Bright, 1, 5);
-        }
-
         private Param bright;
+        private Param volume;
+        private Channels channel;
+
+        public Tv(string nameTv, bool stateTv, Channels channelCur, byte volumeCur, byte brightCur)
+            : base(nameTv, stateTv)
+        {
+            channel = channelCur;
+            volume = new Param(volumeCur, 1, 5);
+            bright = new Param(brightCur, 1, 5);
+        }
 
         public Param Bright
         {
@@ -28,9 +22,6 @@
             }
         }
 
-
-        private Param volume;
-
         public Param Volume
         {
             get
@@ -39,9 +30,6 @@
             }
         }
 
-
-
-        private Channels channel;
         public Channels Channel
         {
             get
@@ -50,7 +38,6 @@
             }
         }
 
-        
         public void NextChannel()
         {
             if ((int)channel < System.Enum.GetValues(typeof(Channels)).Length - 1)
@@ -66,6 +53,5 @@
                 channel--;
             }
         }
-
     }
 }

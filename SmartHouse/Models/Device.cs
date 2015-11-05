@@ -2,13 +2,15 @@
 {
     abstract public class Device : IDevice
     {
-        public Device(string Name, bool State)
+        protected string name;
+        protected bool state;
+
+        public Device(string nameDev, bool stateDev)
         {
-            name = Name;
-            state = State;
+            name = nameDev;
+            state = stateDev;
         }
 
-        protected string name;
         public string Name
         {
             get
@@ -16,10 +18,6 @@
                 return name;
             }
         }
-
-        abstract public string Type { get; }
-
-        protected bool state;
 
         public bool State
         {

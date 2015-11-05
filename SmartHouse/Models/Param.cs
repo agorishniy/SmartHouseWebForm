@@ -7,17 +7,18 @@ namespace SmartHouse.Models
 {
     public class Param
     {
-        public Param(byte Value, byte Min, byte Max)
-        {
-            min = Min;
-            max = Max;
-            value = Value;
-        }
-
         private byte min;
         private byte max;
-
         private byte value;
+
+        public Param(byte valueCurrent, byte minVal, byte maxVal)
+        {
+            min = minVal;
+            max = maxVal;
+            value = valueCurrent;
+        }
+
+
         public byte Value
         {
             get

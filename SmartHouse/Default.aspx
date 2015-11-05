@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>SmartHouse</title>
-	<link rel="stylesheet" type="text/css" href="App_Themes/reset.css" />
-	<link rel="stylesheet" type="text/css" href="App_Themes/style.css" />
+	<link rel="stylesheet" type="text/css" href="Content/reset.css" />
+	<link rel="stylesheet" type="text/css" href="Content/style.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,7 +31,7 @@
                             <h3>
                                 LAMP
                             </h3>
-                            <asp:Image ID="IconLamp" CssClass="add-icon" ImageUrl="App_Themes/images/lamp_3.png" runat="server" />
+                            <asp:Image ID="IconLamp" CssClass="add-icon" ImageUrl="Content/images/lamp_3.png" runat="server" />
                         </asp:Panel>
                     </asp:LinkButton>
 
@@ -40,7 +40,7 @@
                             <h3>
                                 FAN
                             </h3>
-                            <asp:Image ID="IconFan" CssClass="add-icon" ImageUrl="App_Themes/images/fan_3_1.png" runat="server" />
+                            <asp:Image ID="IconFan" CssClass="add-icon" ImageUrl="Content/images/fan_3_1.png" runat="server" />
                         </asp:Panel>
                     </asp:LinkButton>
 
@@ -49,7 +49,7 @@
                             <h3>
                                 LOUVERS
                             </h3>
-                            <asp:Image ID="IconLouvers" CssClass="add-icon" ImageUrl="App_Themes/images/louvers_3.png" runat="server" />
+                            <asp:Image ID="IconLouvers" CssClass="add-icon" ImageUrl="Content/images/louvers_3.png" runat="server" />
                         </asp:Panel>
                     </asp:LinkButton>
 
@@ -58,7 +58,7 @@
                             <h3>
                                 TV
                             </h3>
-                            <asp:Image ID="IconTv" CssClass="add-icon" ImageUrl="App_Themes/images/tv_3.png" runat="server" />
+                            <asp:Image ID="IconTv" CssClass="add-icon" ImageUrl="Content/images/tv_3.png" runat="server" />
                         </asp:Panel>
                     </asp:LinkButton>
 
@@ -81,7 +81,6 @@
 	    window.onload = sameHeight;
 	    function sameHeight() {
 	       document.getElementById('LeftCol').style.height = parseInt(document.getElementById('RightCol').offsetHeight) - 6 + "px";
-//	               alert(parseInt(document.getElementById('RightCol').offsetHeight));
         };
 	</script>
 </body>

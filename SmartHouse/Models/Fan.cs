@@ -2,15 +2,13 @@
 {
     public class Fan : Device, IDevSpeed
     {
-        override public string Type
-        {
-            get
-            {
-                return "fan";
-            }
-        }
-
         private Param speed;
+
+        public Fan(string nameDev, bool stateDev, byte speedFan)
+            : base(nameDev, stateDev)
+        {
+            speed = new Param(speedFan, 1, 5);
+        }
 
         public Param Speed
         {
@@ -20,11 +18,15 @@
             }
         }
 
-        public Fan(string Name, bool State, byte Speed)
-            : base(Name, State)
+        public Param Param
         {
-            speed = new Param(Speed, 1, 5);
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
         }
-
     }
 }

@@ -57,12 +57,57 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\img_footer.jpg" />
-    <Content Include="App_Themes\img_header_2.jpg" />
-    <Content Include="App_Themes\Reset.css" />
-    <Content Include="App_Themes\Style.css" />
+    <Content Include="Content\fonts\Europe Normal.svg" />
+    <Content Include="Content\images\btn_down.png" />
+    <Content Include="Content\images\btn_off.png" />
+    <Content Include="Content\images\btn_on.png" />
+    <Content Include="Content\images\btn_up.png" />
+    <Content Include="Content\images\del_green_2.png" />
+    <Content Include="Content\images\fan_1.gif" />
+    <Content Include="Content\images\fan_2.gif" />
+    <Content Include="Content\images\fan_3.gif" />
+    <Content Include="Content\images\fan_3.png" />
+    <Content Include="Content\images\fan_3_1.png" />
+    <Content Include="Content\images\fan_4.gif" />
+    <Content Include="Content\images\fan_5.gif" />
+    <Content Include="Content\images\fan_stop.png" />
+    <Content Include="Content\images\header_bg_2.jpg" />
+    <Content Include="Content\images\icon_discovery.png" />
+    <Content Include="Content\images\icon_football.png" />
+    <Content Include="Content\images\icon_ictv.png" />
+    <Content Include="Content\images\icon_inter.png" />
+    <Content Include="Content\images\icon_m1.png" />
+    <Content Include="Content\images\icon_ukraine.png" />
+    <Content Include="Content\images\lamp_3.png" />
+    <Content Include="Content\images\lamp_off.png" />
+    <Content Include="Content\images\lamp_on.png" />
+    <Content Include="Content\images\louvers_0.png" />
+    <Content Include="Content\images\louvers_1.png" />
+    <Content Include="Content\images\louvers_2.png" />
+    <Content Include="Content\images\louvers_3.png" />
+    <Content Include="Content\images\louvers_stop.png" />
+    <Content Include="Content\images\tv_3.png" />
+    <Content Include="Content\images\tv_discovery.png" />
+    <Content Include="Content\images\tv_football.png" />
+    <Content Include="Content\images\tv_ictv.png" />
+    <Content Include="Content\images\tv_inter.png" />
+    <Content Include="Content\images\tv_m1.png" />
+    <Content Include="Content\images\tv_stop.png" />
+    <Content Include="Content\images\tv_ukraine.png" />
+    <Content Include="Content\images\val_0.png" />
+    <Content Include="Content\images\val_1.png" />
+    <Content Include="Content\images\val_2.png" />
+    <Content Include="Content\images\val_3.png" />
+    <Content Include="Content\images\val_4.png" />
+    <Content Include="Content\images\val_5.png" />
+    <Content Include="Content\Reset.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\ClassDiagram1.cd" />
+    <Content Include="Content\fonts\Europe Normal.eot" />
+    <Content Include="Content\fonts\Europe Normal.otf" />
+    <Content Include="Content\fonts\Europe Normal.ttf" />
+    <Content Include="Content\fonts\Europe Normal.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,7 +148,9 @@
     <Compile Include="Models\Tv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Themes\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

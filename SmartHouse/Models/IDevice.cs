@@ -7,11 +7,6 @@
             get;
         }
 
-        string Type
-        {
-            get;
-        }
-
         bool State
         {
             get;

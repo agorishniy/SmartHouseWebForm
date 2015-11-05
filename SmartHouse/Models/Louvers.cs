@@ -2,15 +2,13 @@
 {
     public class Louvers : Device, IDevOpen
     {
-        override public string Type
-        {
-            get
-            {
-                return "louvers";
-            }
-        }
-
         private Param open;
+
+        public Louvers(string nameDev, bool stateDev, byte openPercent)
+            : base(nameDev, stateDev)
+        {
+            open = new Param(openPercent, 0, 2);
+        }
 
         public Param Open
         {
@@ -19,12 +17,5 @@
                 return open;
             }
         }
-
-        public Louvers(string Name, bool State, byte Open)
-            : base(Name, State)
-        {
-            open = new Param(Open, 0, 2);
-        }
-
     }
 }

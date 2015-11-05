@@ -174,7 +174,7 @@ p{
     width: 12%;
     height: 12%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .device-status-name{
@@ -183,6 +183,8 @@ p{
     color: #2e3192;
     display: inline-block;
     vertical-align: middle;
+    max-width: 98px;
+    overflow-wrap: break-word;
 }
 
 .device-status-btn-del{
@@ -192,8 +194,8 @@ p{
     width: 18px;
     height: 18px;
     display: inline-block;
-    vertical-align: middle;
-    float: right;
+    vertical-align: top;
+    float: right; 
 }
 
 .device-status-img-del{
@@ -208,7 +210,7 @@ p{
 	-webkit-filter: drop-shadow(2px 2px 4px rgba(46,49,146,0.5));
     border-radius: 4px;
     padding: 2px 2px 4px 5px;
-    margin: 0 0 5px 0;
+    margin: 5px 0 0 0;
 }
 
 .device-div-on-off-left{
